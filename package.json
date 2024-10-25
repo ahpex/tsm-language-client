@@ -1,0 +1,54 @@
+{
+  "name": "tsm-language-server-client",
+  "description": "tsm-language-server-client",
+  "author": "Michael Pietsch",
+  "license": "MIT",
+  "version": "0.0.1",
+  "publisher": "Michael Pietsch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahpex/tsm-language-server-client.git"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "activationEvents": [
+    "onLanguage"
+  ],
+  "main": "./client/out/extension",
+  "contributes": {
+    "configuration": {
+      "title": "tsm-language-server-client",
+      "properties": {
+        "tsm-language-server-client.executable": {
+          "type": "string",
+          "default": "/path/to/executable",
+          "description": "Executable binary that constitutes the language server. You need to restart VSCode to take effect."
+        },
+        "tsm-language-server-client.prefix": {
+          "type": "string",
+          "default": "xyz =",
+          "description": "Prefix to search for in files."
+        },
+        "tsm-language-server-client.suggestionsdir": {
+          "type": "string",
+          "default": "/tmp",
+          "description": "Which directory to search for file suggestions."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  }
+}
