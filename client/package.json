@@ -4,7 +4,7 @@
   "author": "Michael Pietsch",
   "license": "MIT",
   "version": "0.0.1",
-  "publisher": "Michael Pietsch",
+  "publisher": "mpietsch",
   "repository": {
     "type": "git",
     "url": "https://github.com/ahpex/tsm-language-server-client.git"

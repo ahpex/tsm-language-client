@@ -4,7 +4,7 @@
   "author": "Michael Pietsch",
   "license": "MIT",
   "version": "0.0.1",
-  "publisher": "Michael Pietsch",
+  "publisher": "mpietsch",
   "repository": {
     "type": "git",
     "url": "https://github.com/ahpex/tsm-language-server-client.git"
@@ -18,7 +18,7 @@
   "activationEvents": [
     "onLanguage"
   ],
-  "main": "./client/out/extension",
+  "main": "./client/out/extension.js",
   "contributes": {
     "configuration": {
       "title": "tsm-language-server-client",
@@ -45,7 +45,7 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -b",
     "watch": "tsc -b -w",
-    "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+    "postinstall": "cd client && npm install && npm install && cd .."
   },
   "devDependencies": {
     "@types/node": "^20.5.7",
