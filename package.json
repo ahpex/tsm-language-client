@@ -28,10 +28,10 @@
           "default": "/path/to/executable",
           "description": "Executable binary that constitutes the language server. You need to restart VSCode to take effect."
         },
-        "tsm-language-server-client.prefix": {
+        "tsm-language-server-client.varname": {
           "type": "string",
-          "default": "xyz =",
-          "description": "Prefix to search for in files."
+          "default": "folders",
+          "description": "Variable name to start triggering file suggestions."
         },
         "tsm-language-server-client.suggestionsdir": {
           "type": "string",

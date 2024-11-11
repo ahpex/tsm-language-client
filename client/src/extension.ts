@@ -10,25 +10,24 @@ import {
 let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
-  const configuration = workspace.getConfiguration('tsm-language-server-client');
+  const configuration = workspace.getConfiguration(
+    "tsm-language-server-client"
+  );
 
-  const executable = configuration.get<string>('executable');
-  const prefix = configuration.get<string>('prefix');
-  const suggestionsDir = configuration.get<string>('suggestionsdir');
+  const executable = configuration.get<string>("executable");
+  const varName = configuration.get<string>("varname");
+  const suggestionsDir = configuration.get<string>("suggestionsdir");
 
   const runOptions = {
-      command: executable, 
-      args: [
-        "--prefix", prefix,
-        "--suggestionsdir", suggestionsDir,
-      ],
-      transport: TransportKind.stdio
-  }
+    command: executable,
+    args: ["--varname", varName, "--suggestionsdir", suggestionsDir],
+    transport: TransportKind.stdio,
+  };
   // If the extension is launched in debug mode then the debug server options are used
   // Otherwise the run options are used
   const serverOptions: ServerOptions = {
     run: runOptions,
-    debug: runOptions
+    debug: runOptions,
   };
 
   // Options to control the language client
