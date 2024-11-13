@@ -17,7 +17,8 @@
     "vscode": "^1.75.0"
   },
   "activationEvents": [
-    "onLanguage"
+    "onLanguage:typescript",
+    "onLanguage:javascript"
   ],
   "main": "./client/out/extension.js",
   "contributes": {
